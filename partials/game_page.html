@@ -1,0 +1,135 @@
+<div class="myback" >
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <h1>LEFTRIGHT</h1>
+            <br/>
+
+        </div>
+        <div class="col-md-4">
+            <h3>{{currentTimeStr}}</h3>
+            <br/>
+            <h4>{{winText}}</h4>
+        </div>
+
+        <div class="col-md-4">
+
+
+        </div>
+    </div>
+
+
+<br/>
+<br/>
+<br/>
+
+    <div class="row">
+        <div class="col-md-4" ng-click="catchClick(1)">.
+
+
+            <br/>
+            <div ng-if="isSimpleAnswer()">
+                <img src="img/button.png">
+            </div>
+            <div ng-if="isImageAnswer()">
+                <img ng-src="{{currentQuestion.a1Img}}">
+            </div>
+            <div ng-if="isTextAnswer()">
+
+                <h3>{{currentQuestion.a1text}}</h3>
+            </div>
+            <div ng-if="isTextAndImageAnswer()">
+                <h3>{{currentQuestion.a1text}}</h3>
+                <br/>
+                <img ng-src="{{currentQuestion.a1Img}}">
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div ng-if="isTextQuestion()">
+                <h2>{{currentQuestion.qText}}</h2>
+                <br/>
+            </div>
+
+            <div ng-if="isTextAndImageQuestion()">
+
+                <div ng-if="firstOrder()">
+
+                    <h3>{{currentQuestion.qText}}</h3>
+                    <br/>
+                    <img ng-src="{{currentQuestion.qImg}}">
+                    <br/>
+                </div>
+
+
+                <div ng-if="secondOrder()">
+                    <img ng-src="{{currentQuestion.qImg}}">
+                    <br/>
+                    <h3>{{currentQuestion.qText}}</h3>
+                    <br/>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-md-4" ng-click="catchClick(2)">
+
+
+            <br/>
+            <div ng-if="isSimpleAnswer()">
+                <img src="img/button.png">
+            </div>
+            <div ng-if="isImageAnswer()">
+                <img ng-src="{{currentQuestion.a2Img}}">
+            </div>
+            <div ng-if="isTextAnswer()">
+                <h3>{{currentQuestion.a2text}}</h3>
+            </div>
+            <div ng-if="isTextAndImageAnswer()">
+                <h3>{{currentQuestion.a2text}}</h3>
+                <br/>
+                <img ng-src="{{currentQuestion.a2Img}}">
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <br/>
+        <br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>questionType</th>
+                <th>qOrder</th>
+                <th>qText</th>
+                <th>qImg</th>
+                <th>answerType</th>
+                <th>a1Img</th>
+                <th>a1text</th>
+                <th>a2Img</th>
+                <th>a2text</th>
+                <th>answer</th>
+
+
+            </tr>
+            </thead>
+            <tr >
+                <td>{{ currentQuestion.questionType }}</td>
+                <td>{{ currentQuestion.qOrder }}</td>
+                <td>{{ currentQuestion.qText }}</td>
+                <td>{{ currentQuestion.qImg }}</td>
+                <td>{{ currentQuestion.answerType }}</td>
+                <td>{{ currentQuestion.a1Img }}</td>
+                <td>{{ currentQuestion.a1text }}</td>
+                <td>{{ currentQuestion.a2Img }}</td>
+                <td>{{ currentQuestion.a2text }}</td>
+                <td>{{ currentQuestion.answer }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

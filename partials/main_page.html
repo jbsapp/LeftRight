@@ -1,0 +1,55 @@
+<div class="search-page" ng-controller="mainController">
+
+    MAIN PAGE
+<br/>
+    <br/>
+    <br/><br/>
+
+
+
+    <div ng-if="isFromGame()">
+
+        <h2>{{failreason}}</h2>
+        <br/>
+
+        <h2>Last Score: {{lastscore}}</h2>
+
+    </div>
+
+
+
+
+
+    <br/>
+
+    <br/>
+
+    <div class="result1" >
+        <table class="table">
+            <thead>
+            <tr>
+                <th>username</th>
+                <th>score</th>
+            </tr>
+            </thead>
+
+            <tr ng-repeat="x in scores | orderObjectBy: score">
+                <td>{{ x.name }}</td>
+                <td>{{ x.score }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <br/>
+    <br/><br/>
+
+<br/>
+    <button  ng-click="startgame()">
+        START
+    </button>
+    <button  ng-click="submit()">
+        Submit
+    </button>
+
+
+</div>
